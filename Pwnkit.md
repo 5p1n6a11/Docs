@@ -61,4 +61,12 @@ $ ./cve-2021-4034
 
 ## 対策
 
+### 緩和策
+
+#### SUIDビットの無効化
+
+```shell
+$ sudo chmod 0755 /usr/bin/pkexec
+```
+
 ## References
