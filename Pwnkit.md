@@ -23,12 +23,15 @@ Introduction
 * 脆弱性の悪用により、任意の非特権ユーザがroot権限に権限昇格可能
 * 脆弱性のあるホスト上で実行
   * ローカルエクスプロイト
+* Linuxに12年前から存在する脆弱性
 
-### Polkit pkexec
+### Polkit pkexec[^Polkit-ArchWiki]
 
 * Polkit(旧名PolicyKit)は、UNIXライクなオペレーティングシステムでシステム全体の権限を制御するためのコンポーネント
-* 非特権プロセスが特権プロセスと通信するための系統的な方法を提供
+* 非特権プロセスが特権プロセスと通信できるようにするポリシを定義および操作するためのアプリケーションレベルのツールキット
 * Polkitの`pkexec`コマンドを利用して、任意のコマンドを昇格された権限で実行可能
+
+[^Polkit-ArchWiki]: https://wiki.archlinux.jp/index.php/Polkit
 
 ## 検証環境の構築
 
@@ -94,6 +97,8 @@ $ ./cve-2021-4034
 
 ## 影響範囲
 
+* 主要なLinuxディストリビューションのほとんど
+
 ## 対策
 
 ### SUIDビットの無効化
@@ -120,4 +125,5 @@ Conclusion
 
 ## References
 
-https://www.cybereason.co.jp/blog/threat-analysis-report/8529/
+* https://www.cybereason.co.jp/blog/threat-analysis-report/8529/
+* https://gigazine.net/news/20220127-linux-polkit-bug-gives-attackers-root/
